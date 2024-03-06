@@ -15,16 +15,18 @@ const navItemsInfo = [
 const NavItem = ({ item }) => {
   return (
     <li className="relative group">
-      {item.type === "link" ? <><a href="/" className="px-4 py-2">
-        {item.name}
-      </a>
-      <span className="text-blue-500 absolute transition-all duration-500 font-bold right-0 top-0 group-hover:right-[90%] opacity-0 group-hover:opacity-100">
-        /
-      </span>
-      </> : <>
+      {item.type === "link" ? (
+        <>
+          <a href="/" className="px-4 py-2">
+            {item.name}
+          </a>
+          <span className="text-blue-500 absolute transition-all duration-500 font-bold right-0 top-0 group-hover:right-[90%] opacity-0 group-hover:opacity-100">
+            /
+          </span>
+        </>
       ) : (
-      </>}
-      
+        <></>
+      )}
     </li>
   );
 };
@@ -56,9 +58,8 @@ const Header = () => {
           )}
         </div>
         <div
-          className={`${
-            navIsVisible ? "right-0" : "-right-full"
-          } transition-all duration-300 mt-[56px] lg:mt-0 bg-dark-hard lg:bg-transparent z-[49] flex flex-col w-full lg:w-auto justify-center lg:justify-end lg:flex-row fixed top-0 bottom-0 lg:static gap-x-9 items-center`}
+          className={`${navIsVisible ? "right-0" : "-right-full"
+            } transition-all duration-300 mt-[56px] lg:mt-0 bg-dark-hard lg:bg-transparent z-[49] flex flex-col w-full lg:w-auto justify-center lg:justify-end lg:flex-row fixed top-0 bottom-0 lg:static gap-x-9 items-center`}
         >
           <ul className="text-white items-center gap-y-5 lg:text-dark-soft flex flex-col lg:flex-row gap-x-2 font-semibold">
             {navItemsInfo.map((item) => (
