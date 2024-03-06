@@ -7,7 +7,7 @@ import { images } from "../constants";
 const navItemsInfo = [
   { name: "Home", type: "link" },
   { name: "Articles", type: "link" },
-  { name: "Pages", type: "dropdown", items: ["About us, Contact us"] },
+  { name: "Pages", type: "dropdown", items: ["About us", "Contact us"] },
   { name: "Pricing", type: "link" },
   { name: "Faq", type: "link" },
 ];
@@ -19,6 +19,7 @@ const NavItem = ({ item }) => {
         <>
           <a href="/" className="px-4 py-2">
             {item.name}
+
           </a>
           <span className="text-blue-500 absolute transition-all duration-500 font-bold right-0 top-0 group-hover:right-[90%] opacity-0 group-hover:opacity-100">
             /
@@ -26,11 +27,21 @@ const NavItem = ({ item }) => {
         </>
       ) : (
         <>
-        <a href="/" className="px-4 py-2">
-            {item.name}
+          <a href="/" className="px-4 py-2 flex gap-x-1 items-center">
+            <span>{item.name}</span>
+            <MdKeyboardArrowDown />
           </a>
-          <div className="hidden transition-all duraation-500 pt-4 absolute bottom-0 right-0 transform translate-y-full ">
-
+          <div className="hidden transition-all duraation-500 pt-4 absolute bottom-0 right-0 transform translate-y-full group-hover:block w-max">
+            <ul className="flex flex-col shadow-lg rounded-lg overflow-hidden">
+              {item.items.map((page) => (
+                  <a
+                   href="/" 
+                   className="hover:bg-dark-hard hover:text-white px-4 py-2 text-white lg:text-dark-soft"
+                  >
+                    {page}
+                 </a>
+              ))}
+            </ul>
           </div>
         </>
       )}
