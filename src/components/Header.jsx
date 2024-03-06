@@ -44,7 +44,7 @@ const NavItem = ({ item }) => {
           className={`${
             dropdown ? "block" : "hidden"
             } lg:hidden transition-all duraation-500 pt-4 lg:absolute lg:bottom-0 lg:right-0 lg:transform lg:translate-y-full lg:group-hover:block w-max`}>
-            <ul className="flex flex-col shadow-lg rounded-lg overflow-hidden">
+            <ul className="bg-dark-soft lg:bg-transparent text-center flex flex-col shadow-lg rounded-lg overflow-hidden">
               {item.items.map((page) => (
                 <a
                   href="/"
