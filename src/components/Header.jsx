@@ -13,7 +13,13 @@ const navItemsInfo = [
 ];
 
 const NavItem = ({ item }) => {
-  
+  const [dropdown, setDropdown,] = useState(false);
+
+  const toggleDropdownHandler = () => {
+    setDropdown((curState) => {
+      return !curState;
+    });
+  };
 
   return (
     <li className="relative group">
@@ -27,24 +33,29 @@ const NavItem = ({ item }) => {
           </span>
         </>
       ) : (
-        <>
-          <a href="/" className="px-4 py-2 flex gap-x-1 items-center">
+        <div className="flex flex-col items-center">
+          <button className="px-4 py-2 flex gap-x-1 items-center"
+           onClick={toggleDropdownHandler}
+           >
             <span>{item.name}</span>
             <MdKeyboardArrowDown />
-          </a>
-          <div className="hidden transition-all duraation-500 pt-4 absolute bottom-0 right-0 transform translate-y-full group-hover:block w-max">
+          </button>
+          <div 
+          className={`${
+            dropdown ? "block" : "hidden"
+            } lg:hidden transition-all duraation-500 pt-4 lg:absolute lg:bottom-0 lg:right-0 lg:transform lg:translate-y-full lg:group-hover:block w-max`}>
             <ul className="flex flex-col shadow-lg rounded-lg overflow-hidden">
               {item.items.map((page) => (
-                  <a
-                   href="/" 
-                   className="hover:bg-dark-hard hover:text-white px-4 py-2 text-white lg:text-dark-soft"
-                  >
-                    {page}
-                 </a>
+                <a
+                  href="/"
+                  className="hover:bg-dark-hard hover:text-white px-4 py-2 text-white lg:text-dark-soft"
+                >
+                  {page}
+                </a>
               ))}
             </ul>
           </div>
-        </>
+        </div>
       )}
     </li>
   );
