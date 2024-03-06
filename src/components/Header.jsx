@@ -25,7 +25,14 @@ const NavItem = ({ item }) => {
           </span>
         </>
       ) : (
-        <></>
+        <>
+        <a href="/" className="px-4 py-2">
+            {item.name}
+          </a>
+          <div className="hidden transition-all duraation-500 pt-4 absolute bottom-0 right-0 transform translate-y-full ">
+
+          </div>
+        </>
       )}
     </li>
   );
