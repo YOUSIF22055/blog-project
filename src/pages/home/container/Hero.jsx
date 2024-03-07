@@ -1,4 +1,6 @@
 import React from 'react'
+import { FiSearch } from "react-icons/fi";
+
 import images from '../../../constants/images'
 
 const Hero = () => {
@@ -13,7 +15,8 @@ const Hero = () => {
                 eiusmod tempor incididunt ut labore et doloer magna aliqua
             </p>
         <div className='flex flex-col gap-y-2.5 mt-10 relative'>
-            <div>
+            <div className='relative'>
+                <FiSearch className='absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[#959EAD]' />
             <input type="text" />
         </div>
         <button>search</button>
