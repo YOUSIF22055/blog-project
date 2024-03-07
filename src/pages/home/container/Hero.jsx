@@ -17,7 +17,10 @@ const Hero = () => {
         <div className='flex flex-col gap-y-2.5 mt-10 relative'>
             <div className='relative'>
                 <FiSearch className='absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 text-[#959EAD]' />
-            <input type="text" />
+            <input className='placeholder:font-bold font-semibold text-dark-soft'
+             type="text"
+            placeholder='Search article'
+            />
         </div>
         <button>search</button>
         </div>
