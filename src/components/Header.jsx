@@ -43,7 +43,8 @@ const NavItem = ({ item }) => {
           <div 
           className={`${
             dropdown ? "block" : "hidden"
-            } lg:hidden transition-all duraation-500 pt-4 lg:absolute lg:bottom-0 lg:right-0 lg:transform lg:translate-y-full lg:group-hover:block w-max`}>
+            } lg:hidden transition-all duraation-500 pt-4 lg:absolute lg:bottom-0 lg:right-0 lg:transform lg:translate-y-full lg:group-hover:block w-max`}
+            >
             <ul className="bg-dark-soft lg:bg-transparent text-center flex flex-col shadow-lg rounded-lg overflow-hidden">
               {item.items.map((page) => (
                 <a
@@ -69,7 +70,7 @@ const Header = () => {
   };
 
   return (
-    <section>
+    <section className="sticky top-0 left-0 right-0 z-50">
       <header className="container mx-auto px-5 flex justify-between py-4 items-center">
         <div>
           <img className="w-16" src={images.Logo} alt="logo" />
