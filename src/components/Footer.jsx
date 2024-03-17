@@ -2,7 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div></div>
+    <section className="bg-dark-hard">
+      <footer className="container mx-auto grid"></footer>
+    </section>
   )
 }
 
