@@ -1,44 +1,41 @@
 import React from "react";
-import MainLayout from "../../components/MainLayout";
-import BreadCrumbs from "../../components/BreadCrumbs";
-import { images } from "../../constants";
 import { Link } from "react-router-dom";
+import BreadCrumbs from "../../components/BreadCrumbs";
+import CommentsContainer from "../../components/comments/CommentsContainer";
+import MainLayout from "../../components/MainLayout";
+import { images } from "../../constants";
 import SuggestedPosts from "./container/SuggestedPosts";
-
 const breadCrumbsData = [
   { name: "Home", link: "/" },
   { name: "Blog", link: "/blog" },
   { name: "Article title", link: "/blog/1" },
 ];
-
 const postsData = [
   {
-     _id: "1",
-     image: images.Post1Image,
-     title: "Help children get better education",
-     createdAt: "2023-01-28T15:35:53.607+0000"
+    _id: "1",
+    image: images.Post1Image,
+    title: "Help children get better education",
+    createdAt: "2023-01-28T15:35:53.607+0000",
   },
   {
     _id: "2",
     image: images.Post1Image,
     title: "Help children get better education",
-    createdAt: "2023-01-28T15:35:53.607+0000"
- },
- {
-  _id: "3",
-  image: images.Post1Image,
-  title: "Help children get better education",
-  createdAt: "2023-01-28T15:35:53.607+0000"
-},
-{
-  _id: "4",
-  image: images.Post1Image,
-  title: "Help children get better education",
-  createdAt: "2023-01-28T15:35:53.607+0000"
-},
-  
+    createdAt: "2023-01-28T15:35:53.607+0000",
+  },
+  {
+    _id: "3",
+    image: images.Post1Image,
+    title: "Help children get better education",
+    createdAt: "2023-01-28T15:35:53.607+0000",
+  },
+  {
+    _id: "4",
+    image: images.Post1Image,
+    title: "Help children get better education",
+    createdAt: "2023-01-28T15:35:53.607+0000",
+  },
 ];
-
 const tagsData = [
   "Medical",
   "Lifestyle",
@@ -47,12 +44,11 @@ const tagsData = [
   "Food",
   "Diet",
   "Education",
-]
-
+];
 const ArticleDetailPage = () => {
   return (
     <MainLayout>
-      <section className="container mx-auto max-w-5xl flex flex-col px-5 py-5 lg-flex-row lg:gap-x-5 lg:items-start">
+      <section className="container mx-auto max-w-5xl flex flex-col px-5 py-5 lg:flex-row lg:gap-x-5 lg:items-start">
         <article className="flex-1">
           <BreadCrumbs data={breadCrumbsData} />
           <img
@@ -77,9 +73,10 @@ const ArticleDetailPage = () => {
               congue mauris rhoncus aenean vel elit scelerisque. In egestas erat
               imperdiet sed euismod nisi porta lorem mollis. Morbi tristique
               senectus et netus. Mattis pellentesque id nibh tortor id aliquet
-              lectus proin
+              lectus proin.
             </p>
           </div>
+          <CommentsContainer className="mt-10" logginedUserId="a" />
         </article>
         <SuggestedPosts
           header="Latest Article"
@@ -91,5 +88,4 @@ const ArticleDetailPage = () => {
     </MainLayout>
   );
 };
-
 export default ArticleDetailPage;
